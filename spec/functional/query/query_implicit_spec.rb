@@ -17,7 +17,4 @@ describe Poisol::Stub, "#implicit query params" do
     response = RestClient.get "http://localhost:3030/book",{:params => {:author=>'val',:name=>"doni"}}
     expect(response.body).to eq({"title"=>"independance", "category"=>{"age_group"=>"10", "genre"=>"action", "publisher"=>{"name"=>"summa", "place"=>"erode"}}}.to_json)
   end
-
-
 end
-
