@@ -16,7 +16,7 @@ module Poisol
       end
 
       define_method('without') do |key|
-        @request.query.delete key
+        @request.query.delete key.to_s
         self
       end
     end

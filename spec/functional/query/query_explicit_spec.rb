@@ -25,7 +25,7 @@ describe Poisol::Stub, "#query_explicit" do
   end
 
   it "removes default query params" do
-    Book.new.without('author').build()
+    Book.new.without(:author).build()
     response = RestClient.get "http://localhost:3030/book",{:params => {:name=> 'doni'}}
     expect(response.body).to eq({"title"=>"independance", "category"=>{"age_group"=>"10", "genre"=>"action", "publisher"=>{"name"=>"summa", "place"=>"erode"}}}.to_json)
   end
